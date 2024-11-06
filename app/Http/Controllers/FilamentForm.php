@@ -69,6 +69,21 @@ class FilamentForm extends Controller
 
         ];
     }
+
+    public static function footerForm(): array
+    {
+        return [
+
+            TextInput::make('copy_right')
+                ->maxLength(191),
+            TextInput::make('powered_by')
+                ->maxLength(191),
+            RichEditor::make('content')
+                ->columnSpanFull(),
+            SpatieMediaLibraryFileUpload::make('image')->columnSpanFull(),
+
+        ];
+    }
     public static function success(String $title = 'Success', String $body = null)
     {
         Notification::make()
