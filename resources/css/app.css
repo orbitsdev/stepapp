@@ -5,3 +5,8 @@
 [x-cloak] {
     display: none;
 }
+
+
+.fi .fi-topbar {
+    background-color: gold;
+}

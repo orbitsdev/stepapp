@@ -2,18 +2,22 @@
 
 namespace App\Providers;
 
+use App\Models\AdvisoryBoard;
 use App\Models\Jog;
+use App\Models\Run;
 use App\Models\Move;
+use App\Models\Walk;
 use App\Models\Welcome;
 use App\Models\NewsSection;
-use App\Models\Walk;
+use App\Observers\AdvisoryBoardObserver;
 use App\Observers\JogObserver;
+use App\Observers\RunObserver;
 use App\Observers\MoveObserver;
+use App\Observers\WalkObserver;
 use App\Observers\WelcomeObserver;
 use App\Observers\NewSectionObserver;
 use Illuminate\Support\Facades\Event;
 use App\Observers\NewsSectionObserver;
-use App\Observers\WalkObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -41,6 +45,8 @@ class EventServiceProvider extends ServiceProvider
         Move::observe(MoveObserver::class);
         Walk::observe(WalkObserver::class);
         Jog::observe(JogObserver::class);
+        Run::observe(RunObserver::class);
+        AdvisoryBoard::observe(AdvisoryBoardObserver::class);
     }
 
     /**

@@ -134,6 +134,7 @@ class FilamentForm extends Controller
         ];
     }
 
+
     public static function jogForm(): array
     {
         return [
@@ -266,6 +267,93 @@ class FilamentForm extends Controller
             //     ->columnSpanFull()->rows(2),
         ];
     }
+
+
+
+    public static function runForm(): array
+    {
+        return [
+
+            Tabs::make('Manage Run Section Content')
+                ->tabs([
+                    Tabs\Tab::make('Run')
+                        ->schema([
+                            TextInput::make('title')->maxLength(191)->columnSpanFull()->required(),
+                            Textarea::make('content')->columnSpanFull()->rows(5),
+                        ]),
+                    Tabs\Tab::make('Actvities')
+                        ->schema([
+                            ...FilamentForm::runActivityForm()
+                        ]),
+
+                ])->columnSpanFull(),
+
+        ];
+    }
+
+
+    public static function runActivityForm(): array
+    {
+        return [
+            TableRepeater::make('run_activity')
+                ->relationship('runActivities')
+                ->schema([
+                    TextInput::make('title')->columnSpanFull()->required(),
+                ])
+                ->addActionLabel('Add activity')
+                ->columnSpanFull()
+                ->withoutHeader()
+                ->defaultItems(0)
+                ->collapsible()
+                ->collapsed(),
+
+        ];
+    }
+
+
+    public static function serviceForm(): array
+    {
+        return [
+
+            TextInput::make('title')->maxLength(191)->columnSpanFull()->required(),
+            Textarea::make('description')->columnSpanFull()->rows(5),
+
+        ];
+    }
+
+
+    public static function advisoryBoardForm(): array
+    {
+        return [
+            TextInput::make('target')->maxLength(191)->columnSpanFull()->required(),
+            TextInput::make('title')->maxLength(191)->columnSpanFull()->required(),
+            Textarea::make('content')->columnSpanFull()->rows(5),
+
+        ];
+    }
+    public static function advisoryMemberForm(): array
+    {
+        return [
+            SpatieMediaLibraryFileUpload::make('image')->columnSpanFull(),
+            TextInput::make('name')->maxLength(191)->columnSpanFull(),
+            TextInput::make('title')->maxLength(191)->columnSpanFull(),
+            Textarea::make('description')->columnSpanFull()->rows(5),
+
+
+        ];
+    }
+    public static function teamMemberForm(): array
+    {
+        return [
+            SpatieMediaLibraryFileUpload::make('image')->columnSpanFull()->square(),
+            TextInput::make('name')->maxLength(191)->columnSpanFull(),
+            TextInput::make('title')->maxLength(191)->columnSpanFull(),
+            Textarea::make('description')->columnSpanFull()->rows(5),
+
+
+        ];
+    }
+
     public static function success(String $title = 'Success', String $body = null)
     {
         Notification::make()
