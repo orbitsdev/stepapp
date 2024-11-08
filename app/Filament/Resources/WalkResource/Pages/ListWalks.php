@@ -2,8 +2,9 @@
 
 namespace App\Filament\Resources\WalkResource\Pages;
 
-use App\Filament\Resources\WalkResource;
 use Filament\Actions;
+use App\Http\Controllers\GlobaAction;
+use App\Filament\Resources\WalkResource;
 use Filament\Resources\Pages\ListRecords;
 
 class ListWalks extends ListRecords
@@ -13,6 +14,7 @@ class ListWalks extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
+            GlobaAction::make('walk.png'),
             Actions\CreateAction::make(),
         ];
     }

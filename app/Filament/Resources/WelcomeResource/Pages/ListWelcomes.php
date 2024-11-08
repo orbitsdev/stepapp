@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\WelcomeResource\Pages;
 
-use App\Filament\Resources\WelcomeResource;
 use Filament\Actions;
+use App\Http\Controllers\GlobaAction;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\WelcomeResource;
 
 class ListWelcomes extends ListRecords
 {
@@ -14,6 +15,7 @@ class ListWelcomes extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
+            GlobaAction::make('welcome.png'),
             Actions\CreateAction::make()->label('Create New')->createAnother(false),
         ];
     }

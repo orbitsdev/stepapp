@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\ModuleType;
 use Illuminate\Http\Request;
+use Filament\Actions\StaticAction;
 use Filament\Forms\Components\Tabs;
+use Illuminate\Contracts\View\View;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
+use Filament\Forms\Components\Actions\Action;
 use Awcodes\FilamentTableRepeater\Components\TableRepeater;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
@@ -19,10 +22,18 @@ class FilamentForm extends Controller
     public static function carouselForm(): array
     {
         return [
-            TextInput::make('name')->maxLength(191)->columnSpanFull(),
-            SpatieMediaLibraryFileUpload::make('image')->columnSpanFull(),
-            Toggle::make('is_enabled')
-                ->inline()->default(true)->name('Enabled')
+            Section::make('Carousel Management')
+            ->description('Manage and update the carousel content displayed on your platform. This section allows you to maintain and enhance the visual appeal of your site.')
+    ->headerActions([
+        
+    ])
+    ->schema([
+        TextInput::make('name')->maxLength(191)->columnSpanFull()->required(),
+        SpatieMediaLibraryFileUpload::make('image')->columnSpanFull()->required(),
+        Toggle::make('is_enabled')
+            ->inline()->default(true)->name('Enabled')
+    ]),
+
         ];
     }
     public static function welcomeForm(): array
@@ -181,35 +192,7 @@ class FilamentForm extends Controller
                             Textarea::make('description')
                                 ->columnSpanFull()->rows(5)->required(),
 
-                            // Tabs\Tab::make('units')
-                            //     ->schema([
-                            //         TableRepeater::make('module_units')
-                            //             ->relationship('units')
-                            //             ->schema([
-                            //              ...FilamentForm::unitForm()
-                            //             ])
-                            //             ->addActionLabel('Add Units')
-                            //             ->columnSpanFull()
-                            //             ->withoutHeader()
-                            //             ->defaultItems(0)
-                            //             ->collapsible()
-                            //             ->collapsed(),
 
-                            //     ]),
-                            // Tabs\Tab::make('outputs')
-                            //     ->schema([
-                            //         TableRepeater::make('module_outputs')
-                            //             ->relationship('outputs')
-                            //             ->schema([
-                            //              ...FilamentForm::unitForm()
-                            //             ])
-                            //             ->addActionLabel('Add Units')
-                            //             ->columnSpanFull()
-                            //             ->withoutHeader()
-                            //             ->defaultItems(0)
-                            //             ->collapsible()
-                            //             ->collapsed(),
-                            //     ]),
                         ]),
 
                         Tabs\Tab::make('Units')
@@ -345,6 +328,7 @@ class FilamentForm extends Controller
     public static function teamMemberForm(): array
     {
         return [
+
             SpatieMediaLibraryFileUpload::make('image')->columnSpanFull()->square(),
             TextInput::make('name')->maxLength(191)->columnSpanFull(),
             TextInput::make('title')->maxLength(191)->columnSpanFull(),

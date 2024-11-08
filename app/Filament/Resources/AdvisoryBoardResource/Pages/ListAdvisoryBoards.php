@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\AdvisoryBoardResource\Pages;
 
-use App\Filament\Resources\AdvisoryBoardResource;
 use Filament\Actions;
+use App\Http\Controllers\GlobaAction;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\AdvisoryBoardResource;
 
 class ListAdvisoryBoards extends ListRecords
 {
@@ -13,6 +14,7 @@ class ListAdvisoryBoards extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
+            GlobaAction::make('advisory-board.png'),
             Actions\CreateAction::make(),
         ];
     }

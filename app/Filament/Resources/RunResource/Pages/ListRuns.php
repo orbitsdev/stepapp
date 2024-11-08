@@ -2,8 +2,9 @@
 
 namespace App\Filament\Resources\RunResource\Pages;
 
-use App\Filament\Resources\RunResource;
 use Filament\Actions;
+use App\Http\Controllers\GlobaAction;
+use App\Filament\Resources\RunResource;
 use Filament\Resources\Pages\ListRecords;
 
 class ListRuns extends ListRecords
@@ -13,6 +14,7 @@ class ListRuns extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
+            GlobaAction::make('run.png'),
             Actions\CreateAction::make(),
         ];
     }

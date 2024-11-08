@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\TeamMemberResource\Pages;
 
-use App\Filament\Resources\TeamMemberResource;
 use Filament\Actions;
+use App\Http\Controllers\GlobaAction;
 use Filament\Resources\Pages\ManageRecords;
+use App\Filament\Resources\TeamMemberResource;
 
 class ManageTeamMembers extends ManageRecords
 {
@@ -13,6 +14,7 @@ class ManageTeamMembers extends ManageRecords
     protected function getHeaderActions(): array
     {
         return [
+            GlobaAction::make('team-member.png'),
             Actions\CreateAction::make(),
         ];
     }

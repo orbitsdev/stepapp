@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\GlobalPartnerResource\Pages;
 
-use App\Filament\Resources\GlobalPartnerResource;
 use Filament\Actions;
+use App\Http\Controllers\GlobaAction;
 use Filament\Resources\Pages\ManageRecords;
+use App\Filament\Resources\GlobalPartnerResource;
 
 class ManageGlobalPartners extends ManageRecords
 {
@@ -13,6 +14,8 @@ class ManageGlobalPartners extends ManageRecords
     protected function getHeaderActions(): array
     {
         return [
+            GlobaAction::make('partners.png'),
+
             Actions\CreateAction::make()->modalWidth('5xl')->createAnother(false),
         ];
     }

@@ -2,8 +2,9 @@
 
 namespace App\Filament\Resources\JogResource\Pages;
 
-use App\Filament\Resources\JogResource;
 use Filament\Actions;
+use App\Http\Controllers\GlobaAction;
+use App\Filament\Resources\JogResource;
 use Filament\Resources\Pages\ListRecords;
 
 class ListJogs extends ListRecords
@@ -13,6 +14,7 @@ class ListJogs extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
+            GlobaAction::make('jog.png'),
             Actions\CreateAction::make(),
         ];
     }

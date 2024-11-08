@@ -2,9 +2,12 @@
 
 namespace App\Filament\Resources\CarouselResource\Pages;
 
-use App\Filament\Resources\CarouselResource;
 use Filament\Actions;
+use Filament\Actions\StaticAction;
+use Illuminate\Contracts\View\View;
+use App\Http\Controllers\GlobaAction;
 use Filament\Resources\Pages\ManageRecords;
+use App\Filament\Resources\CarouselResource;
 
 class ManageCarousels extends ManageRecords
 {
@@ -13,8 +16,10 @@ class ManageCarousels extends ManageRecords
     protected function getHeaderActions(): array
     {
         return [
+            GlobaAction::make('carousel.png'),
             Actions\CreateAction::make()->modalWidth('5xl')->createAnother(false),
-            
+
+
         ];
     }
 }

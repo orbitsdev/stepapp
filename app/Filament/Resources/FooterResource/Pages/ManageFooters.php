@@ -2,8 +2,9 @@
 
 namespace App\Filament\Resources\FooterResource\Pages;
 
-use App\Filament\Resources\FooterResource;
 use Filament\Actions;
+use App\Http\Controllers\GlobaAction;
+use App\Filament\Resources\FooterResource;
 use Filament\Resources\Pages\ManageRecords;
 
 class ManageFooters extends ManageRecords
@@ -13,6 +14,7 @@ class ManageFooters extends ManageRecords
     protected function getHeaderActions(): array
     {
         return [
+            GlobaAction::make('footer.png'),
             Actions\CreateAction::make()->modalWidth('5xl')->createAnother(false),
         ];
     }

@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\ModuleResource\Pages;
 
-use App\Filament\Resources\ModuleResource;
 use Filament\Actions;
+use App\Http\Controllers\GlobaAction;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\ModuleResource;
 
 class ListModules extends ListRecords
 {
@@ -13,6 +14,7 @@ class ListModules extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
+            GlobaAction::make('jog.png'),
             Actions\CreateAction::make(),
         ];
     }

@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\NewsSectionResource\Pages;
 
-use App\Filament\Resources\NewsSectionResource;
 use Filament\Actions;
+use App\Http\Controllers\GlobaAction;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\NewsSectionResource;
 
 class ListNewsSections extends ListRecords
 {
@@ -13,6 +14,7 @@ class ListNewsSections extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
+            GlobaAction::make('new-section.png'),
             Actions\CreateAction::make()->label('Create New')->createAnother(false),
         ];
     }

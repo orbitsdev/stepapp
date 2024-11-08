@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\ServiceResource\Pages;
 
-use App\Filament\Resources\ServiceResource;
 use Filament\Actions;
+use App\Http\Controllers\GlobaAction;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\ServiceResource;
 
 class ListServices extends ListRecords
 {
@@ -13,6 +14,7 @@ class ListServices extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
+            GlobaAction::make('services.png'),
             Actions\CreateAction::make(),
         ];
     }

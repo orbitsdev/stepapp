@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\AdvisoryMemberResource\Pages;
 
-use App\Filament\Resources\AdvisoryMemberResource;
 use Filament\Actions;
+use App\Http\Controllers\GlobaAction;
 use Filament\Resources\Pages\ManageRecords;
+use App\Filament\Resources\AdvisoryMemberResource;
 
 class ManageAdvisoryMembers extends ManageRecords
 {
@@ -13,6 +14,7 @@ class ManageAdvisoryMembers extends ManageRecords
     protected function getHeaderActions(): array
     {
         return [
+            GlobaAction::make('advisory-member.png'),
             Actions\CreateAction::make(),
         ];
     }
