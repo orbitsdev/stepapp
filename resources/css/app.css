@@ -1,7 +1,8 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@tailwind variants;
 [x-cloak] {
     display: none;
 }
@@ -9,4 +10,13 @@
 
 .fi .fi-topbar {
     background-color: gold;
+
+}
+
+.swiper-pagination-bullet-active{
+    background-color:  #154C8C !important;
+}
+
+.swiper-pagination-bullet{
+    background-color:  #154C8C important;
 }

@@ -46,4 +46,12 @@ public function getImage()
     // }
 
 
+    public function scopeIsEnabled($query){
+        return $query->where('is_enabled', true);
+    }
+
+    public function scopeWithRelation($query){
+        return $query->with(['media']);
+    }
+
 }
