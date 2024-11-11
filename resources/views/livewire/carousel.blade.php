@@ -1,5 +1,5 @@
-<div class="container  mx-auto  mt-10">
-    <div class="swiper mySwiper w-full aspect-video max-h-[700px] max-w-7xl">
+<div class="container  mx-auto mt-16 mb-[64px]">
+    <div class="swiper mySwiper w-full aspect-video max-h-[600px] max-w-6xl">
         <div class="swiper-wrapper w-full h-full " >
             @foreach ($caroucels as $caroucel)
                 <div class="swiper-slide flex items-center justify-center rounded-[40px] overflow-hidden shadow-md w-full">
@@ -13,6 +13,10 @@
         </div>
          <!-- If we need pagination -->
          <div class="swiper-pagination"></div>
+
+{{--
+         <div class="swiper-button-prev"></div>
+         <div class="swiper-button-next"></div> --}}
 
   <!-- If we need navigation buttons -->
 
