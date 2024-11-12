@@ -4,7 +4,7 @@
     <div class="beam absolute  top-1/2 right-[0px] translate-y-[-50%] z-50 rounded-full"></div> --}}
 
 
-    <div class="swiper mySwiper w-full aspect-video max-h-[580px] max-w-6xl relative">
+    <div class="swiper mySwiper w-full aspect-video max-h-[580px] max-w-5xl relative">
         <div class="swiper-wrapper w-full h-full " >
             @foreach ($caroucels as $caroucel)
                 <div class="swiper-slide  flex items-center justify-center rounded-[40px] overflow-hidden shadow-md w-full">
