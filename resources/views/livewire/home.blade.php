@@ -3,4 +3,6 @@
     @livewire('carousel')
     @livewire('welcomeSection')
     @livewire('newsSection')
+    @livewire('localAndGlobalPartners')
+    @livewire('footer')
 </div>

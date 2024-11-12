@@ -62,8 +62,18 @@
 .w-title{
     letter-spacing: 16px !important;
 }
+.n-title{
+    letter-spacing: 1.2px !important;
+}
+.n-title{
+    letter-spacing: 1.2px !important;
+}
 
 .ph{
+    line-height: 28.8px !important;
+}
+
+.ptitle{
     line-height: 28.8px !important;
 }
 
@@ -77,7 +87,7 @@
   }
   .c {
     position: relative; /* Ensure pseudo-elements are positioned relative to this container */
-    overflow: hidden;   /* Prevent beams from causing horizontal scrollbars */
+    /* overflow: hidden;   Prevent beams from causing horizontal scrollbars */
 }
 
 .c::before,
@@ -100,4 +110,15 @@
 
 .c::after {
     right: -260px; /* Position the right beam */
+}
+
+
+/* // NEWS */
+.nw
+{
+    font-weight: 600;
+}
+
+.nh{
+    line-height: 1.5;
 }

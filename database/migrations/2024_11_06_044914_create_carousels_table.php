@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->boolean('is_enabled')->default(true)->nullable();
+            $table->integer('sort_id')->default(0);
             $table->timestamps();
         });
     }

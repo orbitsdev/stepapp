@@ -25,7 +25,7 @@ class FilamentForm extends Controller
             Section::make('Carousel Management')
             ->description('Manage and update the carousel content displayed on your platform. This section allows you to maintain and enhance the visual appeal of your site.')
     ->headerActions([
-        
+
     ])
     ->schema([
         TextInput::make('name')->maxLength(191)->columnSpanFull()->required(),

@@ -63,7 +63,7 @@ class GlobalPartnerResource extends Resource
             ])->contentGrid([
                 'md' => 2,
                 'xl' => 3,
-            ]);
+            ])->reorderable('sort_id');;
     }
 
     public static function getPages(): array

@@ -28,7 +28,7 @@ public function getImage()
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('image')->singleFile();
-        $this->addMediaCollection('images')->onlyKeepLatest(6);
+        // $this->addMediaCollection('images')->onlyKeepLatest(6);
     }
 
 
