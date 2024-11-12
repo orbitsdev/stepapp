@@ -39,8 +39,11 @@
 </head>
 
 <body class="">
+    <div class="overflow-x-hidden">
 
-    {{ $slot }}
+        {{ $slot }}
+
+    </div>
 
     @livewireScripts
     @livewire('notifications')

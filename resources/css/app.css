@@ -88,7 +88,7 @@
   }
   .c {
     position: relative;
-     overflow: hidden;
+     /* overflow: hidden; */
      /* overflow: visible;
      overflow: visible; */
 
@@ -100,8 +100,8 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 400px; /* Beam size */
-    height: 600px;
+    width: 200px; /* Beam size */
+    height: 200px;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 90%, rgba(255, 255, 255, 0) 90%);
     filter: blur(80px); /* Smooth beam effect */
     pointer-events: none; /* Allow user interaction on other elements */
