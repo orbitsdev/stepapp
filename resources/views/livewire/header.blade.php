@@ -7,8 +7,8 @@
         </div>
 
         <!-- Navigation Links -->
-        <nav class="hidden md:flex space-x-8 text-gray-500 font-medium">
-            <a href="#" class="text-step-700 font-semibold">Home</a>
+        <nav class="hidden md:flex space-x-8 text-gray-500 ">
+            <a href="#" class="text-step-700 font-medium">Home</a>
             <a href="#" class="hover:text-step-700">Programs</a>
             <a href="#" class="hover:text-step-700">Advisory Board</a>
             <a href="#" class="hover:text-step-700">Events</a>
@@ -18,7 +18,7 @@
         <!-- Apply Now Button -->
         <div>
             <a href="#" class="bg-step-800 text-white font-semibold py-2 px-4 rounded-lg hover:bg-step-700">
-                Join Now!
+                Join Now
             </a>
         </div>
     </div>

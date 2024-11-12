@@ -13,6 +13,7 @@
 
 }
 
+
 .swiper {
     width: 100%;
     height: 100%;
@@ -58,3 +59,45 @@
 
 
 
+.w-title{
+    letter-spacing: 16px !important;
+}
+
+.ph{
+    line-height: 28.8px !important;
+}
+
+
+.beam {
+    filter: blur(80px); /* Add heavy blur for a smoother and natural look */
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 0) 90%);
+    pointer-events: none; /* Allow clicks to pass through */
+  }
+  .c {
+    position: relative; /* Ensure pseudo-elements are positioned relative to this container */
+    overflow: hidden;   /* Prevent beams from causing horizontal scrollbars */
+}
+
+.c::before,
+.c::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px; /* Beam size */
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 90%, rgba(255, 255, 255, 0) 90%);
+    filter: blur(80px); /* Smooth beam effect */
+    pointer-events: none; /* Allow user interaction on other elements */
+    z-index: 50; /* Place beams behind the content */
+}
+
+.c::before {
+    left: -260px; /* Position the left beam */
+}
+
+.c::after {
+    right: -260px; /* Position the right beam */
+}

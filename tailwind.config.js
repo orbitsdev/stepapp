@@ -28,7 +28,7 @@ export default {
             colors: {
 
                 gray: colors.neutral,
-                'step-gray': '#9F9F9F',
+                'step-gray': '#828282',
                 'step': {
                 '50': '#e8feff',
                 '100': '#c5feff',
