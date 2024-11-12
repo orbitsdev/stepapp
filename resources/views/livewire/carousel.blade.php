@@ -7,7 +7,7 @@
     <div class="swiper mySwiper w-full aspect-video max-h-[580px] max-w-6xl relative">
         <div class="swiper-wrapper w-full h-full " >
             @foreach ($caroucels as $caroucel)
-                <div class="swiper-slide flex items-center justify-center rounded-[40px] overflow-hidden shadow-md w-full">
+                <div class="swiper-slide  flex items-center justify-center rounded-[40px] overflow-hidden shadow-md w-full">
                     <img
                         src="{{ $caroucel->getFirstMediaUrl() ?? asset('images/placeholder-image.jpg') }}"
                         alt="Slide"
@@ -26,4 +26,6 @@
   <!-- If we need navigation buttons -->
 
     </div>
+
+
 </div>

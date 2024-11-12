@@ -28,6 +28,7 @@
     padding-bottom: 30px;  /* <-- added to show to bullets, other way they are hidden */
 }
 
+
 .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
     bottom: 0px;  /* <-- modified to show under de img */
     top: var(--swiper-pagination-top, auto);
@@ -86,8 +87,11 @@
     pointer-events: none; /* Allow clicks to pass through */
   }
   .c {
-    position: relative; /* Ensure pseudo-elements are positioned relative to this container */
-    /* overflow: hidden;   Prevent beams from causing horizontal scrollbars */
+    position: relative;
+     overflow: hidden;
+     /* overflow: visible;
+     overflow: visible; */
+
 }
 
 .c::before,
