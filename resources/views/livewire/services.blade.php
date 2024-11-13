@@ -6,7 +6,7 @@
         @foreach ($services as $service)
 
         <div>
-            <h3 class="text-xl font-bold text-step-800">{{$service->title}}</h3>
+            <h3 class="text-xl font-bold text-[#828282]">{{$service->title}}</h3>
             <p class="text-step-gray">
                 {{$service->description}}
             </p>
