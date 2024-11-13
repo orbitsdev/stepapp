@@ -89,7 +89,7 @@
   .c {
     position: relative;
     /* // overflow: hidden; */
-    
+
 
 }
 
@@ -124,4 +124,12 @@
 
 .nh{
     line-height: 1.5;
+}
+
+.active-link{
+ @apply text-step-700 font-medium;
+}
+
+.inactive-link{
+@apply hover:text-step-700;
 }

@@ -8,8 +8,8 @@
 
         <!-- Navigation Links -->
         <nav class="hidden md:flex space-x-8 text-gray-500 ">
-            <a href="#" class="text-step-700 font-medium">Home</a>
-            <a href="#" class="hover:text-step-700">Programs</a>
+            <a  href="{{route('home')}}" class="{{RouteManager::isCurrentPage(Session::get('current_route_name'),['home'],'active-link','inactive-link')}}">Home</a>
+            <a  href="{{route('program')}}" class="{{RouteManager::isCurrentPage(Session::get('current_route_name'),['program'],'active-link','inactive-link')}}">Programs</a>
             <a href="#" class="hover:text-step-700">Advisory Board</a>
             <a href="#" class="hover:text-step-700">Events</a>
             <a href="#" class="hover:text-step-700">News</a>

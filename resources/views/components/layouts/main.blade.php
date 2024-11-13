@@ -40,8 +40,10 @@
 
 <body class="">
     <div class="overflow-x-hidden">
-
+        @livewire('header')
         {{ $slot }}
+
+        @livewire('footer')
 
     </div>
 
