@@ -61,15 +61,14 @@
         <div class="border-t border-gray-300 pt-4 grid grid-cols-1 lg:grid-cols-2 gap-4">
             <!-- Left Section: Copyright -->
             <p class="text-gray-500 text-sm text-center lg:text-left">
-                © 2024 STEP APP TBI
+                {{$footerSection->copy_right ??''}}
             </p>
 
             <!-- Right Section: Partnership Logos -->
             <div class="flex items-center justify-center lg:justify-end">
-                <span class="text-gray-500 text-sm mr-2">Partnership project by</span>
+                <span class="text-gray-500 text-sm mr-2"> {{$footerSection->powered_by ??''}}</span>
                 @foreach ($footerSection->getMedia('partners') as $partner)
                 <img src="{{ $partner->getUrl()}}" alt="Partner Logo 1" class="w-10 h-10 mx-2 rounded-full">
-
             @endforeach
 
 

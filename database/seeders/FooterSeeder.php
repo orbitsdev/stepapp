@@ -14,8 +14,8 @@ class FooterSeeder extends Seeder
     public function run(): void
     {
         Footer::create([
-            'copy_right'=> 'WELCOME TO STEP APP TB',
-            'powered_by'=> 'WELCOME TO STEP APP TB',
+            'copy_right'=> '© 2024 STEP APP TBI',
+            'powered_by'=> 'Partnership project by',
             'content'=> 'STEP APP TBI is funded through a grant received by Sultan Kudarat State University under the Higher Education Institution Readiness for Innovation and Technopreneruship (HEIRIT) Program of DOST',
             'is_default'=> true,
          ]);
