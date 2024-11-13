@@ -61,7 +61,7 @@ class ModuleResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])->recordUrl(null)->reorderable('sort_id');
     }
 
     public static function getRelations(): array

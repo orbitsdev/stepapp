@@ -13,4 +13,8 @@ class Output extends Model
     public function module(){
         return $this->belongsTo(Module::class);
     }
+    public function scopeSorted($query)
+    {
+        return $query->orderBy('sort_id', 'asc');
+    }
 }

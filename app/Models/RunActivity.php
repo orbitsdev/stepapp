@@ -13,4 +13,9 @@ class RunActivity extends Model
     public function run(){
         return $this->belongsTo(Run::class);
     }
+
+    public function scopeSorted($query)
+    {
+        return $query->orderBy('sort_id', 'asc');
+    }
 }

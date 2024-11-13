@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->string('type')->nullable();
             $table->text('description')->nullable();
+            $table->integer('sort_id')->default(0);
             $table->timestamps();
         });
     }

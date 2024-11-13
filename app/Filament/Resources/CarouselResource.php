@@ -57,7 +57,7 @@ class CarouselResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ])->recordUrl(null);
+            ])->recordUrl(null)->reorderable('sort_id');
     }
 
     public static function getPages(): array

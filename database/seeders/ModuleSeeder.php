@@ -57,7 +57,7 @@ class ModuleSeeder extends Seeder
         ]);
 
         Module::create([
-            'title' => 'Ethics, Social Responsibility, and Cultural Sensitivity',
+            'title' => 'Ethics, Social Responsibility, and  Cultural Sensitivity',
             'type' => 'ELECTIVE',
             'description' => 'Output: Corporate Social Responsibility Plan.',
         ]);

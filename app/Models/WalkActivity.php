@@ -14,7 +14,10 @@ class WalkActivity extends Model
         return $this->belongsTo(Walk::class);
     }
 
-    
 
+    public function scopeSorted($query)
+    {
+        return $query->orderBy('sort_id', 'asc');
+    }
 
 }

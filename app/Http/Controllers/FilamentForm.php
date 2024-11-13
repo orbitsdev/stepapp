@@ -13,6 +13,7 @@ use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Actions\Action;
 use Awcodes\FilamentTableRepeater\Components\TableRepeater;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -105,9 +106,9 @@ class FilamentForm extends Controller
         return [
 
             TextInput::make('title')->maxLength(191)->columnSpanFull()->required(),
-            Textarea::make('content')
-                ->columnSpanFull()->rows(5),
-            // SpatieMediaLibraryFileUpload::make('image')->columnSpanFull(),
+            RichEditor::make('content')
+                ->columnSpanFull(),
+            SpatieMediaLibraryFileUpload::make('image')->columnSpanFull(),
 
         ];
     }
@@ -122,7 +123,8 @@ class FilamentForm extends Controller
                     Tabs\Tab::make('Walk')
                         ->schema([
                             TextInput::make('title')->maxLength(191)->columnSpanFull()->required(),
-                            Textarea::make('content')->columnSpanFull()->rows(5),
+                            RichEditor::make('content')
+                            ->columnSpanFull(),
                         ]),
                     Tabs\Tab::make('Actvities')
                         ->schema([
@@ -147,7 +149,9 @@ class FilamentForm extends Controller
                 ->withoutHeader()
                 ->defaultItems(0)
                 ->collapsible()
-                ->collapsed(),
+                ->collapsed()
+                ->orderColumn('sort_id')
+                ,
 
         ];
     }
@@ -164,8 +168,8 @@ class FilamentForm extends Controller
                         ->schema([
                             TextInput::make('title')
                                 ->maxLength(191)->columnSpanFull()->required(),
-                            Textarea::make('content')
-                                ->columnSpanFull()->rows(5)->required(),
+                                RichEditor::make('content')
+                                ->columnSpanFull(),
                             Textarea::make('note')->required()
                                 ->columnSpanFull()->rows(5),
                             TextInput::make('final')->required()
@@ -214,7 +218,9 @@ class FilamentForm extends Controller
                                         ->withoutHeader()
                                         ->defaultItems(0)
                                         ->collapsible()
-                                        ->collapsed(),
+                                        ->collapsed()
+                                        ->orderColumn('sort_id')
+                                        ,
                         ]) ->columnSpanFull(),
                         Tabs\Tab::make('Outputs')
                         ->schema([
@@ -228,7 +234,9 @@ class FilamentForm extends Controller
                             ->withoutHeader()
                             ->defaultItems(0)
                             ->collapsible()
-                            ->collapsed(),
+                            ->collapsed()
+                            ->orderColumn('sort_id')
+                            ,
 
                         ]),
 
@@ -295,7 +303,9 @@ class FilamentForm extends Controller
                 ->withoutHeader()
                 ->defaultItems(0)
                 ->collapsible()
-                ->collapsed(),
+                ->collapsed()
+
+                ,
 
         ];
     }

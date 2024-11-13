@@ -1,3 +1,7 @@
-<div>
-    {{-- Because she competes with no one, no one can compete with her. --}}
+<div class="container mx-auto  my-16 px-4">
+    @livewire('move')
+    @livewire('walk')
+    @livewire('job')
+    @livewire('run')
+    @livewire('services')
 </div>

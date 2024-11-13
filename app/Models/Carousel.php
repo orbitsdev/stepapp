@@ -54,4 +54,8 @@ public function getImage()
         return $query->with(['media']);
     }
 
+    public function scopeSorted($query)
+    {
+        return $query->orderBy('sort_id', 'asc');
+    }
 }

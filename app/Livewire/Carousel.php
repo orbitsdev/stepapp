@@ -11,7 +11,7 @@ class Carousel extends Component
     public $caroucels = [];
     public function render()
     {
-        $this->caroucels = CModel::isEnabled()->withRelation()->get();
+        $this->caroucels = CModel::isEnabled()->withRelation()->orderBy('sort_id', 'asc') ->get();
         return view('livewire.carousel',[
             'caroucels' => $this->caroucels
         ]);

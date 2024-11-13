@@ -133,3 +133,17 @@
 .inactive-link{
 @apply hover:text-step-700;
 }
+
+
+/* move */
+.move .prose p{
+    @apply text-step-gray leading-relaxed mb-4 text-base;
+}
+
+.walk .prose p{
+    @apply text-step-gray leading-relaxed mb-4 text-base;
+}
+
+.jog .prose p{
+    @apply text-step-gray leading-relaxed mb-4 text-base;
+}

@@ -18,6 +18,7 @@ return new class extends Migration
             ->constrained()
             ->onDelete('cascade');
             $table->string('title')->nullable();
+            $table->integer('sort_id')->default(0);
             $table->timestamps();
         });
     }

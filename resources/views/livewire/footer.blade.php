@@ -58,9 +58,9 @@
         </div>
 
         <!-- Divider -->
-        <div class="border-t border-gray-300 pt-4 grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div class="border-t border-gray-300 pt-4 grid grid-cols-1 lg:grid-cols-2 gap-4 " >
             <!-- Left Section: Copyright -->
-            <p class="text-gray-500 text-sm text-center lg:text-left">
+            <p class="text-gray-500 text-sm text-center lg:text-left flex items-center  ">
                 {{$footerSection->copy_right ??''}}
             </p>
 

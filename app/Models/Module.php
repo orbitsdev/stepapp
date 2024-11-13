@@ -19,4 +19,19 @@ class Module extends Model
     {
         return $this->hasMany(Output::class);
     }
+
+    public function scopeMandatory($query)
+    {
+        return $query->where('type', 'MANDATORY');
+    }
+
+
+    public function scopeElective($query)
+    {
+        return $query->where('type', 'ELECTIVE');
+    }
+    public function scopeSorted($query)
+    {
+        return $query->orderBy('sort_id', 'asc');
+    }
 }
