@@ -11,8 +11,19 @@ class Footer extends Model  implements HasMedia
     use HasFactory;
     use InteractsWithMedia;
 
-    public function registerMediaCollections(): void
+    public function getImage()
     {
-        $this->addMediaCollection('image')->singleFile();
+        // Use getFirstMediaUrl directly with a fallback URL.
+        return $this->getFirstMediaUrl('image') ?: asset('images/placeholder-image.jpg');
     }
+
+
+
+
+        public function registerMediaCollections(): void
+        {
+            $this->addMediaCollection('image')->singleFile();
+            $this->addMediaCollection('partners')->onlyKeepLatest(2);
+
+        }
 }

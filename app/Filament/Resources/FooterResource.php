@@ -37,6 +37,8 @@ class FooterResource extends Resource
         return $table
             ->columns([
                 SpatieMediaLibraryImageColumn::make('image') ->square(),
+                SpatieMediaLibraryImageColumn::make('partner')
+    ->collection('partners'),
                 Tables\Columns\TextColumn::make('copy_right')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('powered_by')

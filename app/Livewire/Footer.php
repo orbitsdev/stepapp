@@ -2,12 +2,16 @@
 
 namespace App\Livewire;
 
+use App\Models\Footer as Mfooter;
 use Livewire\Component;
 
 class Footer extends Component
 {
+    public $footerSection;
     public function render()
     {
-        return view('livewire.footer');
+
+        $this->footerSection = Mfooter::with(['media'])->where('is_default', true)->first();
+        return view('livewire.footer',['footerSection' => $this->footerSection]);
     }
 }

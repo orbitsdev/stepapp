@@ -85,11 +85,18 @@ class FilamentForm extends Controller
     {
         return [
 
-            TextInput::make('title')
+
+            TextInput::make('copy_right')
+                ->maxLength(191)->columnSpanFull(),
+            TextInput::make('powered_by')
                 ->maxLength(191)->columnSpanFull(),
             Textarea::make('content')
                 ->columnSpanFull(),
             SpatieMediaLibraryFileUpload::make('image')->columnSpanFull(),
+            SpatieMediaLibraryFileUpload::make('partners')
+    ->multiple()
+    ->collection('partners')
+
 
         ];
     }
