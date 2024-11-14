@@ -40,7 +40,7 @@
                         <div>
                             <a href="#" class="text-md font-semibold text-step-800">{{ $news->title }}</a>
                             <p class="text-sm text-step-gray">
-                                {{ Str::limit($item->description, 100)}}
+                                {{ Str::limit($news->description, 100)}}
 
                             </p>
                         </div>
