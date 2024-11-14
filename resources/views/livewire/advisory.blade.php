@@ -49,9 +49,9 @@
         <div class="container mx-auto  py-16 px-4 border-t border-gray-300">
             <div class="text-center">
 
-                <h2 class="text-3xl  md:text-4xl font-bold text-step-800 mt-2 mb-8 uppercase">MEET OUR TEAM</h2>
+                <h2 class="text-3xl  md:text-4xl font-bold text-step-800 mt-2 mb-8 uppercase">{{$teamSection->title}}</h2>
                 <p class="text-lg  text-step-gray mb-8 max-w-2xl mx-auto">
-                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered in some form, by injected humour
+                    {{$teamSection->content}}
                 </p>
 
             </div>

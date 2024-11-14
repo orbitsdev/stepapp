@@ -4,31 +4,31 @@ namespace App\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Tables;
+use App\Models\Event;
 use Filament\Forms\Form;
-use App\Models\TeamMember;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use App\Http\Controllers\FilamentForm;
 use Filament\Tables\Actions\ActionGroup;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\EventResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\TeamMemberResource\Pages;
+use App\Filament\Resources\EventResource\RelationManagers;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
-use App\Filament\Resources\TeamMemberResource\RelationManagers;
 
-class TeamMemberResource extends Resource
+class EventResource extends Resource
 {
-    protected static ?string $model = TeamMember::class;
+    protected static ?string $model = Event::class;
 
     protected static ?string $navigationIcon = 'jam-write-f';
-    protected static ?string $navigationGroup = 'Advisory Management';
-    protected static ?int $navigationSort = 16;
-    protected static ?string $navigationLabel = 'Team Member';
+    protected static ?string $navigationGroup = 'Event Management';
+    protected static ?int $navigationSort = 17;
+    protected static ?string $navigationLabel = 'Events Section';
 
     public static function form(Form $form): Form
     {
         return $form
-            ->schema(FilamentForm::advisoryMemberForm());
+            ->schema(FilamentForm::eventForm());
     }
 
     public static function table(Table $table): Table
@@ -36,13 +36,19 @@ class TeamMemberResource extends Resource
         return $table
             ->columns([
                 SpatieMediaLibraryImageColumn::make('image') ->square(),
-                Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
-
-                    Tables\Columns\TextColumn::make('description')
-                    ->markdown()->wrap(),
+                Tables\Columns\TextColumn::make('location')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('start_date')
+                    ->date()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('end_date')
+                    ->date()
+                    ->sortable(),
+                Tables\Columns\IconColumn::make('is_upcoming')
+                    ->boolean(),
+               
             ])
             ->filters([
                 //
@@ -60,10 +66,19 @@ class TeamMemberResource extends Resource
             ]);
     }
 
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageTeamMembers::route('/'),
+            'index' => Pages\ListEvents::route('/'),
+            'create' => Pages\CreateEvent::route('/create'),
+            'edit' => Pages\EditEvent::route('/{record}/edit'),
         ];
     }
 }

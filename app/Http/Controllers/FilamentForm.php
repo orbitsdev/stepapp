@@ -13,7 +13,9 @@ use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\RichEditor;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Forms\Components\Actions\Action;
 use Awcodes\FilamentTableRepeater\Components\TableRepeater;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -342,6 +344,15 @@ class FilamentForm extends Controller
 
         ];
     }
+
+    public static function teamSectionForm(): array
+    {
+        return [
+            TextInput::make('title')->maxLength(191)->columnSpanFull()->required(),
+            Textarea::make('content')->columnSpanFull()->rows(5),
+
+        ];
+    }
     public static function teamMemberForm(): array
     {
         return [
@@ -350,6 +361,25 @@ class FilamentForm extends Controller
             TextInput::make('name')->maxLength(191)->columnSpanFull(),
             TextInput::make('title')->maxLength(191)->columnSpanFull(),
             Textarea::make('description')->columnSpanFull()->rows(5),
+            ToggleColumn::make('is_upcoming')
+            ->label('Is Upcoming')
+
+
+
+        ];
+    }
+    public static function eventForm(): array
+    {
+        return [
+
+            TextInput::make('title')->maxLength(191)->columnSpanFull(),
+            Textarea::make('location')->columnSpanFull()->rows(5),
+            DatePicker::make('start_date')->minDate(now())->default(now()),
+            DatePicker::make('end_date')->minDate(now())->default(now()),
+            Textarea::make('description')->columnSpanFull()->rows(5),
+            Toggle::make('is_upcoming')->label('Is Coming'),
+            SpatieMediaLibraryFileUpload::make('image')->columnSpanFull()->required(),
+
 
 
         ];

@@ -11,8 +11,9 @@
             <a  href="{{route('home')}}" class="{{RouteManager::isCurrentPage(Session::get('current_route_name'),['home'],'active-link','inactive-link')}}">Home</a>
             <a  href="{{route('program')}}" class="{{RouteManager::isCurrentPage(Session::get('current_route_name'),['program'],'active-link','inactive-link')}}">Programs</a>
             <a href="{{route('advisory-board')}}" class="{{RouteManager::isCurrentPage(Session::get('current_route_name'),['advisory-board'],'active-link','inactive-link')}}">Advisory Board</a>
-            <a href="#" class="hover:text-step-700">Events</a>
-            <a href="#" class="hover:text-step-700">News</a>
+            <a href="{{route('events')}}" class="{{RouteManager::isCurrentPage(Session::get('current_route_name'),['events'],'active-link','inactive-link')}}">Events</a>
+            <a href="{{route('news')}}" class="{{RouteManager::isCurrentPage(Session::get('current_route_name'),['news'],'active-link','inactive-link')}}">News</a>
+
         </nav>
 
         <!-- Apply Now Button -->

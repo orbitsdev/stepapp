@@ -39,6 +39,7 @@ class DatabaseSeeder extends Seeder
             RunActivitySeeder::class,
             ServiceSeeder::class,
             AdvisoryBoardSeeder::class,
+            TeamSectionSeeder::class,
 
         ]);
         // \App\Models\User::factory(10)->create();

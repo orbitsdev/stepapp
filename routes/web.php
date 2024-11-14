@@ -2,7 +2,9 @@
 
 use App\Livewire\Advisory;
 use App\Livewire\AdvisoryBoard;
+use App\Livewire\EventPage;
 use App\Livewire\Home;
+use App\Livewire\NewsPage;
 use App\Livewire\Program;
 use App\Livewire\ViewTargetSection;
 use App\Models\Welcome;
@@ -26,6 +28,8 @@ Route::get('/', function(){
 Route::get('/home', Home::class)->name('home');
 Route::get('/programs', Program::class)->name('program');
 Route::get('/advisory-board', AdvisoryBoard::class)->name('advisory-board');
+Route::get('/events', EventPage::class)->name('events');
+Route::get('/news', NewsPage::class)->name('news');
 
 Route::middleware([
     'auth:sanctum',
