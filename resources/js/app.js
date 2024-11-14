@@ -70,24 +70,24 @@ var swiper = new Swiper(".mySwiper", {
 
 gsap.registerPlugin(ScrollTrigger);
 
-// gsap.fromTo(
-//     '.ph, .w-title',
-//     { y: 50, opacity: 0 },
-//     {
-//         y: 0,
-//         opacity: 1,
-//         duration: 1.2,
-//         ease: 'power3.out',
+gsap.fromTo(
+    '.ph, .w-title',
+    { y: 50, opacity: 0 },
+    {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: 'power3.out',
 
-//         scrollTrigger: {
-//             trigger: '.carousel',
-//             // start: 'top 80%',
-//             // end: 'bottom 60%',
-//             toggleActions: 'play none none none', // Add reverse action
-//             markers: true,
-//         },
-//     }
-// );
+        scrollTrigger: {
+            trigger: '.carousel',
+              start: 'top 30%',
+            //  end: 'top 60%',
+            toggleActions: 'play none play reverse', // Add reverse action
+            // markers: true,
+        },
+    }
+);
 
 gsap.fromTo(
     '.newscard',
@@ -99,10 +99,11 @@ gsap.fromTo(
         ease: 'power3.out',
 
         scrollTrigger: {
+
             trigger: '.welcome',
-             start: "top center ",
-            toggleActions: 'play none none reverse', // Add reverse action
-            markers: true,
+            start: 'bottom center',
+            toggleActions: 'play none none none', // Add reverse action
+            //  markers: true,
         },
     }
 );
