@@ -1,4 +1,4 @@
-<div class="container c mx-auto mt-16 mb-[64px] relative ">
+<div class="container c mx-auto mt-16 mb-[64px] relative  carousel">
 
     {{-- <div class="beam absolute  top-1/2 left-[0px] translate-y-[-50%] z-50 rounded-full"></div>
     <div class="beam absolute  top-1/2 right-[0px] translate-y-[-50%] z-50 rounded-full"></div> --}}

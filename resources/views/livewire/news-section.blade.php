@@ -1,4 +1,4 @@
-<div class="container mx-auto  my-16 px-4">
+<div class="container mx-auto  my-16 px-4 newssection">
     <!-- Section Title and Subtitle -->
     <div class="mb-8">
         <h2 class="text-3xl md:text-4xl font-bold text-step-800 mb-2">{{$newsSection->title}}</h2>
@@ -8,7 +8,7 @@
     <!-- News Grid -->
     <div class="grid grid-cols-1  lg:grid-cols-3 gap-12  container">
         @foreach ($news as $item)
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden newscard">
             <a href="{{$item->getFirstMediaUrl()}}" target="_blank">
 
                 <img src="{{$item->getFirstMediaUrl()}}" alt="{{$item->title}}" class="w-full h-48 object-cover">
