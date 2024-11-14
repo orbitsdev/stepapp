@@ -10,7 +10,7 @@
         <nav class="hidden md:flex space-x-8 text-gray-500 ">
             <a  href="{{route('home')}}" class="{{RouteManager::isCurrentPage(Session::get('current_route_name'),['home'],'active-link','inactive-link')}}">Home</a>
             <a  href="{{route('program')}}" class="{{RouteManager::isCurrentPage(Session::get('current_route_name'),['program'],'active-link','inactive-link')}}">Programs</a>
-            <a href="#" class="hover:text-step-700">Advisory Board</a>
+            <a href="{{route('advisory-board')}}" class="{{RouteManager::isCurrentPage(Session::get('current_route_name'),['advisory-board'],'active-link','inactive-link')}}">Advisory Board</a>
             <a href="#" class="hover:text-step-700">Events</a>
             <a href="#" class="hover:text-step-700">News</a>
         </nav>

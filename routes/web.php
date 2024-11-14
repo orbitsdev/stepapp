@@ -1,5 +1,7 @@
 <?php
 
+use App\Livewire\Advisory;
+use App\Livewire\AdvisoryBoard;
 use App\Livewire\Home;
 use App\Livewire\Program;
 use App\Livewire\ViewTargetSection;
@@ -23,6 +25,7 @@ Route::get('/', function(){
 
 Route::get('/home', Home::class)->name('home');
 Route::get('/programs', Program::class)->name('program');
+Route::get('/advisory-board', AdvisoryBoard::class)->name('advisory-board');
 
 Route::middleware([
     'auth:sanctum',

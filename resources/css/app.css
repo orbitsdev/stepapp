@@ -147,3 +147,6 @@
 .jog .prose p{
     @apply text-step-gray leading-relaxed mb-4 text-base;
 }
+.advisory .prose p{
+    @apply text-step-gray leading-relaxed mb-4 text-base max-w-4xl text-center;
+}

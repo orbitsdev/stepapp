@@ -40,7 +40,7 @@ class AdvisoryBoardResource extends Resource
                 Tables\Columns\TextColumn::make('target')
                 ->searchable(),
                 Tables\Columns\TextColumn::make('title')
-                ->searchable(),
+                ->searchable()->wrap(),
             Tables\Columns\TextColumn::make('content')
                 ->markdown()->wrap(),
                 ToggleColumn::make('is_default')
