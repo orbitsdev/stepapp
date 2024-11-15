@@ -25,7 +25,6 @@ public function getImage()
 {
 
 
-
     if ($this->hasMedia('image')) {
         return $this->getFirstMediaUrl('image');
     }

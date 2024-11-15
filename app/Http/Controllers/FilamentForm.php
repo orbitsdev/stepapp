@@ -360,7 +360,7 @@ class FilamentForm extends Controller
             SpatieMediaLibraryFileUpload::make('image')->columnSpanFull()->square(),
             TextInput::make('name')->maxLength(191)->columnSpanFull(),
             TextInput::make('title')->maxLength(191)->columnSpanFull(),
-            Textarea::make('description')->columnSpanFull()->rows(5),
+            RichEditor::make('description')->columnSpanFull(),
             ToggleColumn::make('is_upcoming')
             ->label('Is Upcoming')
 

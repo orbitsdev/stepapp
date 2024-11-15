@@ -6,6 +6,7 @@ use App\Livewire\EventPage;
 use App\Livewire\Home;
 use App\Livewire\NewsPage;
 use App\Livewire\Program;
+use App\Livewire\ViewNews;
 use App\Livewire\ViewTargetSection;
 use App\Models\Welcome;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,7 @@ Route::get('/programs', Program::class)->name('program');
 Route::get('/advisory-board', AdvisoryBoard::class)->name('advisory-board');
 Route::get('/events', EventPage::class)->name('events');
 Route::get('/news', NewsPage::class)->name('news');
+Route::get('/view/{record}', ViewNews::class)->name('view-news');
 
 Route::middleware([
     'auth:sanctum',

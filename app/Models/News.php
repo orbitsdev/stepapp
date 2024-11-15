@@ -13,6 +13,10 @@ class News extends Model implements HasMedia
     use HasFactory;
     use InteractsWithMedia;
 
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
+    ];
 
 
 public function getImage()
@@ -36,6 +40,20 @@ public function getImage()
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
+    public function getCreatedAtFormattedAttribute()
+    {
+        return $this->created_at->format('F d, Y'); // Example: "November 15, 2024"
+    }
+
+    public function getUpdatedAtFormattedAttribute()
+    {
+        return $this->updated_at->format('F d, Y');
+    }
+    public function getCreatedAtFormattedAttributeHumanDisplay()
+    {
+        return $this->created_at->diffForHumans(); // Example: "2 days ago"
+    }
+
 
 
 }

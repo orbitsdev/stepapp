@@ -8,7 +8,9 @@
                 <img src="{{ $event->getFirstMediaUrl() ?? asset('images/placeholder-image.jpg') }}" alt="Event Image" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-xl font-bold text-step-800">{{ $event->title }}</h3>
-                    <p class="text-[#575757] text-sm my-2">{{ $event->description }}</p>
+                    <p class="text-[#575757] text-sm my-2">
+                        {{    Str::limit($event->description, 230) }}
+                    </p>
                 </div>
             </div>
         @endforeach
