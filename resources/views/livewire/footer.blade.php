@@ -53,7 +53,7 @@
             <div class="">
                 <ul>
                     <li class="font-bold text-step-800 mb-2">Resources</li>
-                    <li><a href="#" class="text-gray-600 hover:text-blue-500">News</a></li>
+                    <li><a href="{{route('news')}}/#" class="text-gray-600 hover:text-blue-500">News</a></li>
                     <li><a href="#" class="text-gray-600 hover:text-blue-500">Events</a></li>
                 </ul>
             </div>

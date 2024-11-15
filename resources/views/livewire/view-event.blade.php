@@ -37,7 +37,7 @@
             <ul class="space-y-4">
                 @foreach ($recentEvents as $event)
                 <li class="flex items-start space-x-3">
-                    <div>
+                    <a href="{{route('view-events',['record'=>$event->id])}}" >
                         <p class="text-sm text-step-gray flex items-center">
                             <i class="fa-regular fa-calendar mr-2"></i> {{ $event->getStartDateFormattedAttribute() }}
                         </p>
@@ -47,7 +47,7 @@
                         <p class="text-[#575757] text-sm mt-1">
                             {{ Str::limit($event->description, 90) }}
                         </p>
-                    </div>
+                    </a>
                 </li>
                 @endforeach
             </ul>

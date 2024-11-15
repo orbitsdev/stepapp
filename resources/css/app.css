@@ -153,3 +153,10 @@
 .view-news .prose p{
     @apply text-step-gray leading-relaxed mb-4 text-base max-w-4xl ;
 }
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+

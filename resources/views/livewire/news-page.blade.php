@@ -5,7 +5,7 @@
         <p class="text-step-gray text-md">— {{ now()->format('d M Y') }}</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" id="news">
         <!-- Main News Grid (2/3 of the section) -->
         <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
             @foreach ($mainNews as $news)
