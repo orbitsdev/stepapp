@@ -53,23 +53,28 @@
             <h2 class="text-lg font-bold text-step-800 mb-4">RECENT ARTICLES</h2>
             <ul class="space-y-4">
                 @foreach ($recentEvents as $event)
-                <li class="flex items-start space-x-3">
-                    <div>
-                        <!-- Display the start date with an icon -->
-                        <p class="text-sm text-step-gray flex items-center">
-                            <i class="fa-regular fa-calendar mr-2"></i> {{ $event->getStartDateFormattedAttribute() }}
-                        </p>
-                        <!-- Title of the event -->
-                        <p class="text-sm font-semibold text-step-800 mt-1">
-                            {{ Str::limit($event->title, 60) }}
-                        </p>
-                        <!-- Event description -->
-                        <p class="text-[#575757] text-sm mt-1">
-                            {{ Str::limit($event->description, 90) }}
-                        </p>
-                    </div>
-                </li>
+                <a href="{{ route('view-events', ['record' => $event->id]) }}" class="block">
+                    <li class="flex items-start space-x-3">
+                        <div>
+                            <!-- Display the start date with an icon -->
+                            <p class="text-sm text-step-gray flex items-center">
+                                <i class="fa-regular fa-calendar mr-2"></i> {{ $event->getStartDateFormattedAttribute() }}
+                            </p>
+
+                            <!-- Title of the event -->
+                            <p class="text-sm font-semibold text-step-800 mt-1">
+                                {{ Str::limit($event->title, 60) }}
+                            </p>
+
+                            <!-- Event description -->
+                            <p class="text-[#575757] text-sm mt-1">
+                                {{ Str::limit($event->description, 90) }}
+                            </p>
+                        </div>
+                    </li>
+                </a>
                 @endforeach
+
             </ul>
         </div>
     </aside>

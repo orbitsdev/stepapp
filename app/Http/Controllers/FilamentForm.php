@@ -93,12 +93,22 @@ class FilamentForm extends Controller
                 ->maxLength(191)->columnSpanFull(),
             TextInput::make('powered_by')
                 ->maxLength(191)->columnSpanFull(),
-            Textarea::make('content')
+                TextInput::make('phone')
+                ->maxLength(191)->columnSpanFull(),
+                TextInput::make('facebook')
+                ->maxLength(191)->columnSpanFull(),
+                TextInput::make('instagram')
+                ->maxLength(191)->columnSpanFull(),
+                TextInput::make('tiktok')
+                ->maxLength(191)->columnSpanFull(),
+                TextArea::make('content')->row(5)->columnSpanFull(),
+                TextInput::make('email')->email()
                 ->columnSpanFull(),
             SpatieMediaLibraryFileUpload::make('image')->columnSpanFull(),
             SpatieMediaLibraryFileUpload::make('partners')
     ->multiple()
-    ->collection('partners')
+    ->collection('partners'),
+
 
 
         ];

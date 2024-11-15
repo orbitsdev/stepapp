@@ -14,8 +14,13 @@ return new class extends Migration
         Schema::create('footers', function (Blueprint $table) {
             $table->id();
             $table->text('content');
-            $table->string('copy_right');
-            $table->string('powered_by');
+            $table->string('copy_right')->nullable();
+            $table->string('powered_by')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('tiktok')->nullable();
+            $table->string('email')->nullable();
             $table->boolean('is_default')->default(true)->nullable();
             $table->timestamps();
         });

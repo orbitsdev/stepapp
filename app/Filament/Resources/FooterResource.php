@@ -43,6 +43,16 @@ class FooterResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('powered_by')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('phone')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('facebook')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('instagram')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('tiktok')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('email')
+                    ->searchable(),
                 Tables\Columns\IconColumn::make('is_default')
                     ->boolean(),
 

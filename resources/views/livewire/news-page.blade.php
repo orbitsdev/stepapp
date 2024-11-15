@@ -9,7 +9,7 @@
         <!-- Main News Grid (2/3 of the section) -->
         <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
             @foreach ($mainNews as $news)
-                <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                <a href="{{route('view-news',['record'=> $news->id])}}" class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
                     <img src="{{ $news->getFirstMediaUrl() ?? asset('images/placeholder-image.jpg') }}" alt="News Image" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <div class="flex items-center text-sm text-step-gray mb-2">
@@ -23,10 +23,10 @@
                                 <img src="{{ $news->getFirstMediaUrl() ?? asset('images/avatar-placeholder.jpg') }}" alt="{{ $news->title }}" class="w-8 h-8 rounded-full mr-2">
                                 <span class="text-sm text-step-gray">Anna</span>
                             </div>
-                            <a href="#" class="text-step-primary text-sm font-semibold">Read More</a>
+
                         </div>
                     </div>
-                </div>
+                </a>
             @endforeach
         </div>
 

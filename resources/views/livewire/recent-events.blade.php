@@ -4,7 +4,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         @foreach ($recentEvents as $event)
-            <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+            <a href="{{route('view-events',['record'=> $event-id])}}" class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
                 <img src="{{ $event->getFirstMediaUrl() ?? asset('images/placeholder-image.jpg') }}" alt="Event Image" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-xl font-bold text-step-800">{{ $event->title }}</h3>
@@ -12,7 +12,7 @@
                         {{    Str::limit($event->description, 230) }}
                     </p>
                 </div>
-            </div>
+            </a>
         @endforeach
     </div>
 </div>

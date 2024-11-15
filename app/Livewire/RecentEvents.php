@@ -12,7 +12,7 @@ class RecentEvents extends Component
         $recentEvents = Event::get();
         return view(
             'livewire.recent-events',
-            [
+            [  
                 'recentEvents' => $recentEvents,
             ]
         );

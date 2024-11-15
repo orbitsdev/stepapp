@@ -16,23 +16,25 @@
                 </p>
                 <div class=" py-4  ">
                     <!-- Social Media Icons Row -->
-                    <div class="flex justify-start space-x-6 mb-8">
-                        <a href="https://facebook.com" target="_blank" class="text-gray-600 hover:text-blue-600">
+                    <div class="flex justify-start space-x-6 mb-4">
+                        <a href="{{$footerSection->facebook}}" target="_blank" class="text-gray-600 hover:text-blue-600">
                             <i class="fab fa-facebook fa-lg"></i>
                         </a>
-                        <a href="https://twitter.com" target="_blank" class="text-gray-600 hover:text-blue-400">
-                            <i class="fab fa-twitter fa-lg"></i>
-                        </a>
-                        <a href="https://instagram.com" target="_blank" class="text-gray-600 hover:text-pink-500">
+
+                        <a href="{{$footerSection->instagram}}" target="_blank" class="text-gray-600 hover:text-pink-500">
                             <i class="fab fa-instagram fa-lg"></i>
                         </a>
-                        <a href="https://linkedin.com" target="_blank" class="text-gray-600 hover:text-blue-700">
-                            <i class="fab fa-linkedin fa-lg"></i>
+                        <a href="{{$footerSection->tiktok}}" target="_blank" class="text-gray-600 hover:text-blue-700">
+                            <i class="fa-brands fa-tiktok"></i>
                         </a>
-                        <a href="https://google.com" target="_blank" class="text-gray-600 hover:text-red-600">
+                        <a href="{{$footerSection->email}}" target="_blank" class="text-gray-600 hover:text-red-600">
                             <i class="fab fa-google fa-lg"></i>
                         </a>
+
+
                     </div>
+                    <p class="text-gray-600">Phone: <a href="tel:+1234567890" class="hover:text-blue-500 mt-8">
+                        0945 853 0019</a></p>
                 </div>
 
             </div>
