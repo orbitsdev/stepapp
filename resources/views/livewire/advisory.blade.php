@@ -19,7 +19,10 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 advisory-member" id="advisory-board-section">
             @foreach ($advisoryMembers as $member)
             <div class="bg-white rounded-md  border border-[##EAECF0] overflow-hidden">
-             <img src="{{$member->getFirstMediaUrl()}}" alt="{{ $member->name }}" class="w-full h-48 object-contain">
+                <a href="{{$member->getFirstMediaUrl()}}" target="_blank">
+
+                    <img src="{{$member->getFirstMediaUrl()}}" alt="{{ $member->name }}" class="w-full h-48 object-contain">
+                </a>
 
                 <div class="p-4">
                     <h3 class="text-xl font-medium text-[#282828]">{{ $member->name }}</h3>
@@ -58,7 +61,10 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 advisory-team-member">
                 @foreach ($teamMembers as $member)
                 <div class="bg-white rounded-md  border border-[#EAECF0] overflow-hidden">
-                 <img src="{{$member->getFirstMediaUrl()}}" alt="{{ $member->name }}" class="w-full h-48 object-contain">
+                    <a href="{{$member->getFirstMediaUrl()}}" target="_blank">
+
+                        <img src="{{$member->getFirstMediaUrl()}}" alt="{{ $member->name }}" class="w-full h-48 object-contain">
+                    </a>
 
                     <div class="p-4">
                         <h3 class="text-xl font-medium text-[#282828]">{{ $member->name }}</h3>
