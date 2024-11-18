@@ -15,7 +15,7 @@ class ManageAdvisoryMembers extends ManageRecords
     {
         return [
             GlobaAction::make('advisory-member.png'),
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()->modalWidth('7xl'),
         ];
     }
 }

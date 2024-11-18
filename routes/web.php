@@ -4,6 +4,7 @@ use App\Livewire\Advisory;
 use App\Livewire\AdvisoryBoard;
 use App\Livewire\EventPage;
 use App\Livewire\Home;
+use App\Livewire\JoinNowPage;
 use App\Livewire\NewsPage;
 use App\Livewire\Program;
 use App\Livewire\ViewEvent;
@@ -32,6 +33,7 @@ Route::get('/programs', Program::class)->name('program');
 Route::get('/advisory-board', AdvisoryBoard::class)->name('advisory-board');
 Route::get('/events', EventPage::class)->name('events');
 Route::get('/news', NewsPage::class)->name('news');
+Route::get('/join', JoinNowPage::class)->name('join');
 Route::get('/news/{record}', ViewNews::class)->name('view-news');
 Route::get('/event/{record}', ViewEvent::class)->name('view-events');
 

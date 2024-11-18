@@ -15,7 +15,7 @@ class ManageTeamMembers extends ManageRecords
     {
         return [
             GlobaAction::make('team-member.png'),
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()->modalWidth('7xl'),
         ];
     }
 }

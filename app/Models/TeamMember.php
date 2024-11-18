@@ -2,16 +2,26 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Social;
 use Spatie\MediaLibrary\HasMedia;
+use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 class TeamMember extends Model implements HasMedia
 {
 
     use HasFactory;
     use InteractsWithMedia;
 
+    public function social()
+    {
+        return $this->morphOne(Social::class, 'sociable');
+    }
+    public function socials()
+    {
+        return $this->morphMany(Social::class, 'sociable');
+    }
 
     public function registerMediaCollections(): void
     {

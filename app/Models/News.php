@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Social;
 use App\Models\Comment;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
@@ -18,6 +19,7 @@ class News extends Model implements HasMedia
         'updated_at' => 'datetime:Y-m-d',
     ];
 
+    
 
 public function getImage()
 {

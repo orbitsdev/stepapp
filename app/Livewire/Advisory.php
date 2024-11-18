@@ -19,8 +19,8 @@ class Advisory extends Component
     {
         $this->advisory = AdvisoryBoard::where('is_default', true)->latest()->first();
         $this->teamSection = TeamSection::where('is_default', true)->latest()->first();
-        $this->advisoryMembers = AdvisoryMember::with(['media'])->get();
-        $this->teamMembers =  TeamMember::with(['media'])->get();
+        $this->advisoryMembers = AdvisoryMember::with(['social','media'])->get();
+        $this->teamMembers =  TeamMember::with(['social','media'])->get();
 
         return view('livewire.advisory',[
             'advisory' => $this->advisory,

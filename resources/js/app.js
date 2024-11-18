@@ -682,3 +682,86 @@ document.querySelectorAll('.new-page-container a').forEach((link) => {
         gsap.to(link, { scale: 1, duration: 0.3, ease: 'power1.in' });
     });
 });
+
+
+//join page
+
+gsap.fromTo(
+    '.hero-section .relative',
+    { opacity: 0, y: 50 },
+    {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: 'power2.out',
+        delay: 0.3,
+        scrollTrigger: {
+            trigger: '.hero-section',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+        },
+    }
+);
+gsap.fromTo(
+    '.benefits-section .rounded-lg',
+    { opacity: 0, y: 30 },
+    {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power2.out',
+        stagger: 0.2,
+        scrollTrigger: {
+            trigger: '.benefits-section',
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+        },
+    }
+);
+gsap.fromTo(
+    '.eligibility-section .rounded-lg',
+    { x: -50, opacity: 0 },
+    {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: 'power2.out',
+        stagger: 0.3,
+        scrollTrigger: {
+            trigger: '.eligibility-section',
+            start: 'top 90%',
+            toggleActions: 'play none none reverse',
+        },
+    }
+);
+gsap.fromTo(
+    '.testimonials-section .rounded-lg',
+    { opacity: 0, y: 50 },
+    {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power2.out',
+        stagger: 0.2,
+        scrollTrigger: {
+            trigger: '.testimonials-section',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+        },
+    }
+);
+gsap.fromTo(
+    '.contact-section',
+    { opacity: 0, y: 30 },
+    {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+            trigger: '.contact-section',
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+        },
+    }
+);

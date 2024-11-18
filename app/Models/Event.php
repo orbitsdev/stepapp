@@ -3,10 +3,12 @@
 namespace App\Models;
 
 
+use App\Models\Social;
+use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Spatie\MediaLibrary\HasMedia;
+
 class Event extends Model implements HasMedia
 {
 
@@ -16,7 +18,7 @@ class Event extends Model implements HasMedia
         'start_date' => 'datetime',
         'end_date' => 'datetime',
     ];
-
+    
 
     public function scopeUpcoming($query)
     {

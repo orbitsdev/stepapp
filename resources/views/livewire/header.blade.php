@@ -17,10 +17,9 @@
         </nav>
 
         <!-- Apply Now Button -->
-        <div>
-            <a href="#" class="bg-step-800 text-white font-semibold py-2 px-4 rounded-lg hover:bg-step-700">
-                Join Now
-            </a>
-        </div>
+        <a href="{{route('join')}}" class="bg-step-800 text-white font-semibold py-2 px-4 rounded-lg hover:bg-step-800 hover:scale-105 transition-transform duration-300">
+            Join Now
+        </a>
+
     </div>
 </header>

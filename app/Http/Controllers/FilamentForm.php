@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 use Filament\Actions\StaticAction;
 use Filament\Forms\Components\Tabs;
 use Illuminate\Contracts\View\View;
+use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
@@ -26,16 +28,14 @@ class FilamentForm extends Controller
     {
         return [
             Section::make('Carousel Management')
-            ->description('Manage and update the carousel content displayed on your platform. This section allows you to maintain and enhance the visual appeal of your site.')
-    ->headerActions([
-
-    ])
-    ->schema([
-        TextInput::make('name')->maxLength(191)->columnSpanFull()->required(),
-        SpatieMediaLibraryFileUpload::make('image')->columnSpanFull()->required(),
-        Toggle::make('is_enabled')
-            ->inline()->default(true)->name('Enabled')
-    ]),
+                ->description('Manage and update the carousel content displayed on your platform. This section allows you to maintain and enhance the visual appeal of your site.')
+                ->headerActions([])
+                ->schema([
+                    TextInput::make('name')->maxLength(191)->columnSpanFull()->required(),
+                    SpatieMediaLibraryFileUpload::make('image')->columnSpanFull()->required(),
+                    Toggle::make('is_enabled')
+                        ->inline()->default(true)->name('Enabled')
+                ]),
 
         ];
     }
@@ -93,21 +93,21 @@ class FilamentForm extends Controller
                 ->maxLength(191)->columnSpanFull(),
             TextInput::make('powered_by')
                 ->maxLength(191)->columnSpanFull(),
-                TextInput::make('phone')
+            TextInput::make('phone')
                 ->maxLength(191)->columnSpanFull(),
-                TextInput::make('facebook')
+            TextInput::make('facebook')
                 ->maxLength(191)->columnSpanFull(),
-                TextInput::make('instagram')
+            TextInput::make('instagram')
                 ->maxLength(191)->columnSpanFull(),
-                TextInput::make('tiktok')
+            TextInput::make('tiktok')
                 ->maxLength(191)->columnSpanFull(),
-                TextArea::make('content')->row(5)->columnSpanFull(),
-                TextInput::make('email')->email()
+            TextArea::make('content')->row(5)->columnSpanFull(),
+            TextInput::make('email')->email()
                 ->columnSpanFull(),
             SpatieMediaLibraryFileUpload::make('image')->columnSpanFull(),
             SpatieMediaLibraryFileUpload::make('partners')
-    ->multiple()
-    ->collection('partners'),
+                ->multiple()
+                ->collection('partners'),
 
 
 
@@ -136,7 +136,7 @@ class FilamentForm extends Controller
                         ->schema([
                             TextInput::make('title')->maxLength(191)->columnSpanFull()->required(),
                             RichEditor::make('content')
-                            ->columnSpanFull(),
+                                ->columnSpanFull(),
                         ]),
                     Tabs\Tab::make('Actvities')
                         ->schema([
@@ -162,8 +162,37 @@ class FilamentForm extends Controller
                 ->defaultItems(0)
                 ->collapsible()
                 ->collapsed()
-                ->orderColumn('sort_id')
-                ,
+                ->orderColumn('sort_id'),
+
+        ];
+    }
+
+    public static function socialForm()
+    {
+        return [
+
+            Section::make()
+                ->columns([
+                    'sm' => 3,
+                    'xl' => 9,
+                    '2xl' => 9,
+                ])
+                ->schema([
+
+                    TextInput::make('facebook')
+                        ->maxLength(191)->columnSpan(3),
+                    TextInput::make('instagram')
+                        ->maxLength(191)->columnSpan(3),
+                    TextInput::make('tiktok')
+                        ->maxLength(191)->columnSpan(3),
+                    TextInput::make('youtube')
+                        ->maxLength(191)->columnSpan(3),
+                    TextInput::make('twitter')
+                        ->maxLength(191)->columnSpan(3),
+                    TextInput::make('linkedin')
+                        ->maxLength(191)->columnSpan(3),
+
+                ]) ->columnSpanFull(),
 
         ];
     }
@@ -180,7 +209,7 @@ class FilamentForm extends Controller
                         ->schema([
                             TextInput::make('title')
                                 ->maxLength(191)->columnSpanFull()->required(),
-                                RichEditor::make('content')
+                            RichEditor::make('content')
                                 ->columnSpanFull(),
                             Textarea::make('note')->required()
                                 ->columnSpanFull()->rows(5),
@@ -218,37 +247,35 @@ class FilamentForm extends Controller
 
                         ]),
 
-                        Tabs\Tab::make('Units')
+                    Tabs\Tab::make('Units')
                         ->schema([
                             TableRepeater::make('module_units')
-                                        ->relationship('units')
-                                        ->schema([
-                                         ...FilamentForm::unitForm()
-                                        ])
-                                        ->addActionLabel('Add Units')
-                                        ->columnSpanFull()
-                                        ->withoutHeader()
-                                        ->defaultItems(0)
-                                        ->collapsible()
-                                        ->collapsed()
-                                        ->orderColumn('sort_id')
-                                        ,
-                        ]) ->columnSpanFull(),
-                        Tabs\Tab::make('Outputs')
+                                ->relationship('units')
+                                ->schema([
+                                    ...FilamentForm::unitForm()
+                                ])
+                                ->addActionLabel('Add Units')
+                                ->columnSpanFull()
+                                ->withoutHeader()
+                                ->defaultItems(0)
+                                ->collapsible()
+                                ->collapsed()
+                                ->orderColumn('sort_id'),
+                        ])->columnSpanFull(),
+                    Tabs\Tab::make('Outputs')
                         ->schema([
                             TableRepeater::make('module_outputs')
-                            ->relationship('outputs')
-                            ->schema([
-                             ...FilamentForm::unitForm()
-                            ])
-                            ->addActionLabel('Add Output')
-                            ->columnSpanFull()
-                            ->withoutHeader()
-                            ->defaultItems(0)
-                            ->collapsible()
-                            ->collapsed()
-                            ->orderColumn('sort_id')
-                            ,
+                                ->relationship('outputs')
+                                ->schema([
+                                    ...FilamentForm::unitForm()
+                                ])
+                                ->addActionLabel('Add Output')
+                                ->columnSpanFull()
+                                ->withoutHeader()
+                                ->defaultItems(0)
+                                ->collapsible()
+                                ->collapsed()
+                                ->orderColumn('sort_id'),
 
                         ]),
 
@@ -315,9 +342,7 @@ class FilamentForm extends Controller
                 ->withoutHeader()
                 ->defaultItems(0)
                 ->collapsible()
-                ->collapsed()
-
-                ,
+                ->collapsed(),
 
         ];
     }
@@ -350,6 +375,22 @@ class FilamentForm extends Controller
             TextInput::make('name')->maxLength(191)->columnSpanFull(),
             TextInput::make('title')->maxLength(191)->columnSpanFull(),
             Textarea::make('description')->columnSpanFull()->rows(5),
+            Group::make()
+                ->relationship('social')
+                ->schema(FilamentForm::socialForm()) ->columnSpanFull()
+            // Repeater::make('socials_links')
+            // ->relationship('socials')
+            // ->schema([
+            //     ...FilamentForm::socialForm()
+            // ])
+            // ->addActionLabel('Add Social')
+            // ->columnSpanFull()
+            // // ->withoutHeader()
+            // ->defaultItems(0)
+            // ->collapsible()
+            // ->collapsed()
+
+            // ,
 
 
         ];
@@ -372,7 +413,7 @@ class FilamentForm extends Controller
             TextInput::make('title')->maxLength(191)->columnSpanFull(),
             RichEditor::make('description')->columnSpanFull(),
             ToggleColumn::make('is_upcoming')
-            ->label('Is Upcoming')
+                ->label('Is Upcoming')
 
 
 

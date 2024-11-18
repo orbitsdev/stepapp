@@ -13,9 +13,13 @@ return new class extends Migration
     {
         Schema::create('socials', function (Blueprint $table) {
             $table->id();
-            $table->string('link'); // The social media link
-            $table->string('image')->nullable(); // Image associated with the social link (e.g., icon/logo)
-            $table->morphs('sociable'); 
+            $table->morphs('sociable');
+            $table->text('facebook')->nullable(); // The social media link
+            $table->text('instagram')->nullable(); // The social media link
+            $table->text('tiktok')->nullable(); // The social media link
+            $table->text('youtube')->nullable(); // The social media link
+            $table->text('linkedin')->nullable(); // The social media link
+            $table->text('twitter')->nullable(); // The social media link
             $table->timestamps();
         });
     }
