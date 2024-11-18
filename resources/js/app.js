@@ -81,8 +81,9 @@ gsap.fromTo(
         ease: 'power3.out',
         scrollTrigger: {
             trigger: '.welcome-container',
-            start: 'top 80%',
+            start: 'end 85%',
             toggleActions: 'play none none reverse',
+            markers: true,
         },
     }
 );
