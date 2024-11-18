@@ -1,4 +1,4 @@
-<div class="container mx-auto my-14 px-4 text-left border-b pt-8 pb-16 border-gray-300  ">
+<div class="container mx-auto my-14 px-4 text-left border-b pt-8 pb-16 border-gray-300  wall-container ">
     <!-- Section Title -->
     <h2 class="text-3xl md:text-4xl font-bold text-step-800 mb-4">
         {{$walk->title}}

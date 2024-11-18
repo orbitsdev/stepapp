@@ -1,4 +1,4 @@
-<div class="container mx-auto my-14 px-4 text-left  pb-16 border-b  border-gray-300  ">
+<div class="container mx-auto my-14 px-4 text-left  pb-16 border-b  border-gray-300 jog-container ">
     <!-- Section Title -->
     <h2 class="text-3xl md:text-4xl font-bold text-step-800 mb-4">
         {{$jog->title}}
@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <div class="container mx-auto mb-16 mt-14 px-4">
+    <div class="container mx-auto mb-16 mt-14 px-4 module-container ">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
             <!-- Left Column -->

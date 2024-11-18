@@ -1,7 +1,7 @@
 
-<div class="border-b border-gray-300">
+<div class="border-b border-gray-300 advisory-container">
 
-    <div class="container mx-auto  py-16 px-4">
+    <div class="container mx-auto  py-16 px-4 advisory-content">
         <div class="text-center">
 
             <h3 class="text-sm font-semibold  uppercase text-center">{{$advisory->target ??''}}</h3>
@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 advisory-member" id="advisory-board-section">
             @foreach ($advisoryMembers as $member)
             <div class="bg-white rounded-md  border border-[##EAECF0] overflow-hidden">
              <img src="{{$member->getFirstMediaUrl()}}" alt="{{ $member->name }}" class="w-full h-48 object-contain">
@@ -46,7 +46,7 @@
 
         </div>
 
-        <div class="container mx-auto  py-16 px-4 border-t border-gray-300">
+        <div class="container mx-auto  py-16 px-4 border-t border-gray-300 advisory-team-container">
             <div class="text-center">
 
                 <h2 class="text-3xl  md:text-4xl font-bold text-step-800 mt-2 mb-8 uppercase">{{$teamSection->title}}</h2>
@@ -55,7 +55,7 @@
                 </p>
 
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 advisory-team-member">
                 @foreach ($teamMembers as $member)
                 <div class="bg-white rounded-md  border border-[#EAECF0] overflow-hidden">
                  <img src="{{$member->getFirstMediaUrl()}}" alt="{{ $member->name }}" class="w-full h-48 object-contain">

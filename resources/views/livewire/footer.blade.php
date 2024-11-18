@@ -43,9 +43,9 @@
             <div class="">
                 <ul>
                     <li class="font-bold text-step-800 mb-2">About Us</li>
-                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Incubation Program</a></li>
+                    <li><a href="{{route('program')}}#incubation-program" class="text-gray-600 hover:text-blue-500">Incubation Program</a></li>
                     <li><a href="#" class="text-gray-600 hover:text-blue-500">Contact Us</a></li>
-                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Advisory Board</a></li>
+                    <li><a href="{{route('advisory-board')}}" class="text-gray-600 hover:text-blue-500">Advisory Board</a></li>
                 </ul>
             </div>
 
@@ -54,7 +54,7 @@
                 <ul>
                     <li class="font-bold text-step-800 mb-2">Resources</li>
                     <li><a href="{{route('news')}}/#" class="text-gray-600 hover:text-blue-500">News</a></li>
-                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Events</a></li>
+                    <li><a href="{{ route('advisory-board') }}#advisory-board-section" class="text-gray-600 hover:text-blue-500">Advisory Board</a></li>
                 </ul>
             </div>
         </div>

@@ -1,4 +1,4 @@
-<div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+<div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 mb-8 view-event-container">
     <!-- Main Content -->
     <div class="col-span-2 space-y-6">
         <!-- Header Section -->

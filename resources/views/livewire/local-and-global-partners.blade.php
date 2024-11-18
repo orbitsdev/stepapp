@@ -1,4 +1,4 @@
-<div class="container mx-auto my-16 px-4">
+<div class="container mx-auto my-16 px-4 global-partners-container">
     <!-- Section Title and Subtitle -->
     <div class="mb-8 text-center">
         <h2 class="text-3xl md:text-4xl font-bold text-step-800 mb-2">LOCAL AND GLOBAL PARTNERS</h2>

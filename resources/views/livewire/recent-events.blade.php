@@ -1,4 +1,4 @@
-<div class="container mx-auto  my-16 px-4  ">
+<div class="container mx-auto  my-16 px-4  recent-event-container ">
     <h2 class="text-3xl md:text-4xl font-bold text-step-800 mb-4">Recent Events</h2>
     <p class="text-lg text-[#3c3c3c] mb-8">Read the latest happenings in STEPAPP</p>
 

@@ -9,8 +9,8 @@ class NewsPage extends Component
 {
     public function render()
     {
-        $mainNews = News::with(['media'])->get();
-        $moreNews = News::with(['media'])->get();
+        $mainNews = News::withCount('comments')->with(['media'])->get();
+        $moreNews = News::withCount('comments')->with(['media'])->get();
         return view('livewire.news-page',[
             'mainNews'=> $mainNews,
             'moreNews'=> $moreNews,
